@@ -29,7 +29,8 @@ export default function Home() {
 
   return (
     <div>
-      {amount}
+      <h1>{amount}</h1>
+      <button onClick={() => deposit(500)}>Deposit 500</button>
     </div>
   )
 }
