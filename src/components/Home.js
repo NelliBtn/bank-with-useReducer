@@ -1,8 +1,12 @@
 import { useReducer } from 'react';
 
 // 'bank', function with set of instructions to manipulate the state depending on action type from dispatch
-const reducer = () => {
-
+// takes 2 args: initial state (500), and dispatch (action)
+const reducer = (state, action) => {
+  switch (action.type) {
+    case 'DEPOSIT':
+      return state + action.payload;
+  }
 };
 
 export default function Home() {
