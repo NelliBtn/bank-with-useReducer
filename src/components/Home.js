@@ -6,6 +6,10 @@ const reducer = (state, action) => {
   switch (action.type) {
     case 'DEPOSIT':
       return state + action.payload;
+    case 'WITHDRAW':
+      return state - action.payload;
+    default:
+      return state;
   }
 };
 
@@ -27,10 +31,18 @@ export default function Home() {
     });
   }
 
+  const withdraw = (amount) => {
+    dispatch({
+      type: 'WITHDRAW',
+      payload: 500
+    })
+  }
+
   return (
     <div>
       <h1>{amount}</h1>
       <button onClick={() => deposit(500)}>Deposit 500</button>
+      <button onClick={() => withdraw(500)}>Withdraw 500</button>
     </div>
   )
 }
